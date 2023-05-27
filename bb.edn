@@ -1,0 +1,4 @@
+{:paths ["src" "test"]
+ :deps {lambdaisland/kaocha {:mvn/version "1.84.1335"}}
+ :tasks {:requires ([babashka.process :refer [shell]])
+         test (shell "bb -m kaocha.runner/-main")}}
