@@ -13,3 +13,11 @@
     (t/is (= nil (p/rob []))))
   (t/testing "[69]=>69"
     (t/is (= 69 (p/rob [69])))))
+
+(t/deftest rotate-array
+  (t/testing "[1 2 3 4 5 6 7] 3=>[5 6 7 1 2 3 4]"
+    (t/is (= [5 6 7 1 2 3 4] (p/rotate-array [1 2 3 4 5 6 7] 3))))
+  (t/testing "[-1 -100 3 99] 2=>[3 99 -1 -100]"
+    (t/is (= [3 99 -1 -100] (p/rotate-array [-1 -100 3 99] 2))))
+  (t/testing "[] 2=>[]"
+    (t/is (= [] (p/rotate-array [] 2)))))

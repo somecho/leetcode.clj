@@ -7,6 +7,7 @@ Leetcode problems solved in Clojure.
 - 1 - Two Sum
 - 169 - Majority Element
 ### [Medium](./src/problems/medium.clj)
+- 189 - Rotate Array
 - 198 - House Robber
 
 ## Testing

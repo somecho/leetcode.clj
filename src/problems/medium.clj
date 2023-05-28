@@ -1,5 +1,23 @@
 (ns problems.medium)
 
+(defn rotate-array
+  "189. Rotate Array
+
+  Given an integer array `nums`, rotate the array to the right by `k` steps, where 
+  `k` is non-negative.
+  "
+  [nums k]
+  (if-not (or (empty? nums)
+              (= k 0))
+    (loop [num-rotations (mod k (count nums))
+           to-rotate nums]
+      (if (= num-rotations 0)
+        to-rotate
+        (recur (dec num-rotations)
+               (concat `(~(last to-rotate))
+                       (take (dec (count nums)) to-rotate)))))
+    []))
+
 (defn rob
   "198. House Robber
   https://leetcode.com/problems/house-robber/
