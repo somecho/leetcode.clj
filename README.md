@@ -8,6 +8,7 @@ Leetcode problems solved in Clojure.
 - 121 - Best Time to Buy and Sell Stock
 - 169 - Majority Element
 ### [Medium](./src/problems/medium.clj)
+- 80 - Remove Duplicates from Sorted Array II
 - 189 - Rotate Array
 - 198 - House Robber
 
@@ -15,3 +16,4 @@ Leetcode problems solved in Clojure.
 ```
 bb test
 ```
+
