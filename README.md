@@ -1,4 +1,4 @@
-# Clojure Leetcode
+# Leetcode.clj
 
 Leetcode problems solved in Clojure.
 
