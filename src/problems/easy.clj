@@ -24,6 +24,32 @@
       (first)
       (as-> pair (map first pair))))
 
+(defn best-time-buy-sell-stock
+  "121. Best Time to Buy and Sell Stock
+  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
+  You are given an array `prices` where `prices[i]` is the price of a given stock
+  on the `ith` day.
+
+  You want to maximize your profit by choosing a single day to buy one stock and
+  choosing a different day in the future to sell that stock.
+
+  Return the maximum profit you can achieve from this transaction. If you cannot
+  achieve any profit, return 0.
+  "
+  [prices]
+  (loop [p prices
+         profit 0
+         cheapest 11111]
+    (if (= 0 (count p))
+      profit
+      (let [p-now (first p)
+            cheapest (min p-now cheapest)
+            profit (max (- p-now cheapest) profit)]
+        (recur (rest p)
+               profit
+               cheapest)))))
+
 (defn majority-element
   "169. Majority Element
   https://leetcode.com/problems/majority-element/
