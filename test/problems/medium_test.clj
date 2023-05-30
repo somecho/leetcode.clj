@@ -2,6 +2,26 @@
   (:require [clojure.test :as t]
             [problems.medium :as p]))
 
+(t/deftest best-time-to-buy-and-sell-stock-ii
+
+  (t/testing "[7 1 5 3 6 4]=>7"
+    (t/is (= 7 (p/best-time-buy-sell-stock-ii [7 1 5 3 6 4]))))
+
+  (t/testing "[1 2 3 4 5]=>4"
+    (t/is (= 4 (p/best-time-buy-sell-stock-ii [1 2 3 4 5]))))
+
+  (t/testing "[]=>0"
+    (t/is (= 0 (p/best-time-buy-sell-stock-ii []))))
+
+  (t/testing "[1]=>0"
+    (t/is (= 0 (p/best-time-buy-sell-stock-ii [1]))))
+
+  (t/testing "[5 4 3 2 1]=>0"
+    (t/is (= 0 (p/best-time-buy-sell-stock-ii [5 4 3 2 1]))))
+
+  (t/testing "[1 1 1 1 1]=>0"
+    (t/is (= 0 (p/best-time-buy-sell-stock-ii [1 1 1 1 1])))))
+
 (t/deftest house-robber
 
   (t/testing "[1 2 3 1]=>4" (t/is (= 4 (p/rob [1 2 3 1]))))
@@ -13,7 +33,6 @@
   (t/testing "[ ]=>nil" (t/is (= nil (p/rob []))))
 
   (t/testing "[69]=>69" (t/is (= 69 (p/rob [69])))))
-
 
 (t/deftest remove-duplicates-from-sorted-array-ii
 
@@ -52,7 +71,6 @@
           expected [99 99]
           actual (p/remove-duplicates-ii nums)]
       (t/is (= expected actual)))))
-
 
 (t/deftest rotate-array
 

@@ -35,6 +35,30 @@
                (if addable (inc c) c)
                (if addable (concat results [n]) results))))))
 
+(defn best-time-buy-sell-stock-ii
+  "122. Best Time to Buy and Sell Stock II
+  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+
+  You are given an integer array prices where prices[i] is the price of a given
+  stock on the ith day.
+ 
+  On each day, you may decide to buy and/or sell the stock. You can only hold at
+  most one share of the stock at any time. However, you can buy it then
+  immediately sell it on the same day.
+ 
+  Find and return the maximum profit you can achieve. "
+  [nums]
+  (if (empty? nums) 0
+      (let [isPeak? #(and (< (first %) (second %)) (>= (second %) (last %)))
+            isValley? #(and (>= (first %) (second %)) (< (second %) (last %)))]
+        (-> (concat [(first nums)] nums [(last nums)])
+            (as-> pad (partition 3 1 pad))
+            (as-> ptns (filter #(or (isPeak? %) (isValley? %)) ptns))
+            (as-> peaks-valleys (map second peaks-valleys))
+            (as-> values (partition 2 2 (reverse values)))
+            (as-> ptns (filter #(= (count %) 2) ptns))
+            (as-> pairs (apply + (map #(apply - %) pairs)))))))
+
 (defn rotate-array
   "189. Rotate Array
 
