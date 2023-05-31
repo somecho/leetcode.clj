@@ -8,6 +8,7 @@ Leetcode problems solved in Clojure.
 - 121 - Best Time to Buy and Sell Stock
 - 169 - Majority Element
 ### [Medium](./src/problems/medium.clj)
+- 55 = Jump Game
 - 80 - Remove Duplicates from Sorted Array II
 - 122 - Best Time to Buy and Sell Stock II
 - 189 - Rotate Array

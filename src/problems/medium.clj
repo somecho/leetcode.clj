@@ -1,5 +1,25 @@
 (ns problems.medium)
 
+(defn jump-game
+  "55. Jump Game
+  https://leetcode.com/problems/jump-game/description/
+
+  You are given an integer array nums. You are initially positioned at the
+  array's first index, and each element in the array represents your maximum jump
+  length at that position.
+ 
+  Return true if you can reach the last index, or false otherwise. "
+  [nums]
+  (loop [can-jump true
+         j (dec (count nums))
+         i (- (count nums) 2)]
+    (if (< i 0)
+      can-jump
+      (let [sum (+ i (nth nums i))]
+        (recur (>= sum j)
+               (if (>= sum j) i j)
+               (dec i))))))
+
 ; this problem requires you to modify an array in place
 ; we ain't gonna do that here
 (defn remove-duplicates-ii
